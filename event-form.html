@@ -9,19 +9,26 @@
   <script src="eventformcontroller.js"></script>
   <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
   <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 </head>
 
 <body ng-app="myApp">
   <div ng-controller="eventformcontroller">
     <form>
-      <label>Event Name: <input type="text" ng-model="user.eventname" /></label><br/>
-      <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes "></select></label><br/>
-      <label>Date (yyyy-mm-dd): <input type="date" ng-model="user.date" /></label><br/>
+      <label>Event Name: <input type="text" ng-model="user.eventname" required/></label><br/>
+      <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes " required></select></label><br/>
+      <label>Date (yyyy-mm-dd): <input type="date" ng-model="user.date" required/></label><br/>
       <label>Favorite Moment: <input type="text" ng-model="user.moment" /></label><br/>
       <label>Something I learned: <input type="text" ng-model="user.learn" /></label><br/>
+      <input type="file" ngf-select ng-model="user.pic" name="file"
+             accept="image/*" ngf-max-size="6MB"
+             ngf-model-invalid="errorFile">
+      <i ng-show="myForm.file.$error.maxSize">File too large
+        {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
-
+    <pre>user = {{uploadPic}}</pre>
     <timeline>
     <timeline-event ng-repeat="event in events | orderBy: 'date'" side="">
       <timeline-badge class="{{event.badgeClass}}">

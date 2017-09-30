@@ -1,4 +1,5 @@
 angular.module('myApp', [
   'myApp.controllers',
-  'angular-timeline'
+  'angular-timeline',
+  'ngFileUpload'
 ]);
