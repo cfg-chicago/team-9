@@ -18,7 +18,7 @@
 </div>
   <div ng-controller="eventformcontroller">
     <form>
-      <label>Event Name: <input type="text" ng-model="user.eventname" /></label><br/>
+      <label>Event Name: <input type="text" ng-model="user.eventname"/></label><br/>
       <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes "></select></label><br/>
       <label>Date (mm-dd-yyyy): <input type="date" ng-model="user.date" /></label><br/>
       <label>Favorite Moment: <input type="text" id="fav_moment" ng-model="user.moment" /></label><br/>
