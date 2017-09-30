@@ -1,0 +1,57 @@
+p{ color:black}
+#table{
+	border: 3px solid black;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: auto;}
+#form {
+    text-align: center
+    
+}
+.blankcol {
+  width: 16vw;
+  background-color: #44b944;
+  height: 99vh;
+  border-spacing: 0px;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Set a background color */
+body {
+  background-color: #44b944;
+  font-family: Helvetica, sans-serif;
+}
+
+
+
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: ;
+  width: 50%;
+}
+
+}
+
+
+
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+   
+  }

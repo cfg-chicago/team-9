@@ -11,7 +11,7 @@ var url = 'mongodb://34.201.37.121:27017/local';
 app.use(express.static(__dirname ));
 
 app.get("/", function(req, res, next){
-	res.sendFile(__dirname + "/event-form.html");
+	res.sendFile(__dirname + "/main.html");
 });
 
 app.get('/get-data', function(req,res,next) {
