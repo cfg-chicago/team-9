@@ -196,9 +196,7 @@ table tr td {
 }
 
 /* Odds Events */
-table tr:nth-child(even) td {
-	background: #f6f6f6;
-}
+
 
 /**
  * Divider
