@@ -1,24 +1,17 @@
-<!--Intial page w/ feed-->
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
 	<link rel="stylesheet" href="main.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="bd.styles.css">
     <link rel="stylesheet" href="page1.css">
-		<script src="bower_components/angular/angular.js"></script>
-	  <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
-	  <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
-	  <script src="app.js"></script>
-	  <script src="maincontroller.js"></script>
-    
  <style>
         * {
     box-sizing: border-box;
 }
 
-
+    
 
 .timeline::after {
     content: '';
@@ -27,7 +20,7 @@
     background-color: white;
     top: 0;
     bottom: 0;
-
+   
 }
 
 
@@ -49,36 +42,38 @@ width: 90%;
     border-radius: 6px;
 }
 
-
-
+ 
+  
   .container {
     width: 90%;
-    padding-left: 420px;
+    padding-left: 420px;   
  </style>
-
-	</head>
-<body ng-controller="maincontroller" data-ng-init="pull()">
+    
+    </head>
+<body>
+    <!-- Navagation bar at the top of the screen-->
     <nav class="horizontal-nav full-width horizontalNav-processed">
   <ul>
     <li><a href="main.html">My Feed</a></li>
     <li><a href="goals.html">My Achievements </a></li>
     <li><a href="timeline.html">My Timeline</a></li>
-    <li><a href="event-form.html">Create a new Event</a></li>
+    <li><a href="aboutMe.html">About Me</a></li>
   </ul>
     </nav>
 	<header role="banner"></header>
-
-
+    
+   <!-- Student profile in the corner of the news feed page-->
 	<table id="table" border="3px solid black" align="left">
         <tr>
-
+            
             <td>
-        <img ng-src="photo.png" alt="Profile Picture" >
+                <!-- Studnet Picture-->
+        <img src="photo.png" alt="Profile Picture" > 
 
-
+    
             <p>
             <strong>Justin Brown</strong> <br/>
-			<strong>Grade: 08  </strong> <br>
+			<strong>Grade: 08  </strong> <br> 
 			<strong>Mentor(s): </strong> Brian Smith <br>
             <strong>Interests: </strong> Ultimate Frisbee
              <br/>
@@ -89,28 +84,28 @@ width: 90%;
             <img src="badge2.png" width="20cm"> Journal Post <br><br>
             <strong> <ins>Upcoming Events</ins></strong> <br>
                 10/27 Family Dinner <br><br> </p>
-
-                <p><strong><ins> Messages</ins></strong> </p>
-
-
-
-                      <ul>
-                       <li  margin-left=10px> <p>  <strong> Brian:</strong>
+            
+                <p><strong><ins> Messages</ins></strong> </p> 
+                
+           
+                
+                      <ul>  
+                       <li  margin-left=10px> <p>  <strong> Brian:</strong> 
                         Great Job This Week!...</p></li>
-
-                       <li> <p>  <strong> Mrs. White:</strong>
+                   
+                       <li> <p>  <strong> Mrs. White:</strong> 
                         Dear Justin, I... </p></li>
-
-                    </ul>
-
-
-
+                    
+                    </ul> 
+                
+            
+            
                 </td>
             </tr>
 	</table>
-
-
-
+     
+          
+    
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="bd.jquery.min.js"%3E%3C/script%3E'))</script>
 
@@ -119,18 +114,16 @@ width: 90%;
 <script src="jquery.horizontalNav.js"></script>
     <br>
     <br>
+    <!-- Activity feed-->
     <h1 align="center"> Activity Feed </h1>
         <br>
         <br>
-
+  <!-- individual event enteries-->
 <div class="timeline">
-  <div class="container" ng-repeat="events in data | orderBy:'date'">
+  <div class="container">
     <div class="content">
-				<h2>{{events.date | date:longDate}} </h2>
-				<p2>Best moment: {{events.moment}}</p2></br>
-				<p2>Something I learned: {{events.learned}}</p2>
-        <!--<h2>September 2017</h2>
-      <p2>I'm so thankful for the back to school gifts we recieved this year! We got brand new backpacks and school supplies :)</p2>--!>
+        <h2>September 2017</h2>
+      <p2>I'm so thankful for the back to school gifts we recieved this year! We got brand new backpacks and school supplies :)</p2>
     </div>
   </div>
   <div class="container">
@@ -141,31 +134,30 @@ width: 90%;
   </div>
   <div class="container">
     <div class="content">
-
+        
       <h2>June 2017</h2>
       <p2> SCHOOL IS OUT!!!!! YAHOOOO!!! CONGRATS TO ALL CPS KIDS FOR MAKING IT THROUGH ANOTHER YEAR! :)</p2>
     </div>
   </div>
   <div class="container">
     <div class="content">
-        <h2>June 2017</h2>
+        <h2>June 2017</h2> 
       <p2>7th Grade Camping Trip! The group camping trip was a blast! It was a great chance for us to bond outside of the classroom!</p2>
-
+   
     </div>
   </div>
   <div class="container">
     <div class="content">
          <h2>November 2016</h2>
       <p2> Thanksgiving Post<br> I'm thankful for my family, freinds and Pitch In!</p2>
-
+     
     </div>
   </div>
   <div class="container">
     <div class="content">
-
          <h2>October 2016</h2>
       <p2> Goal Post<br> This year my goal is to get good grades and participate more in class :)</p2>
-
+      
     </div>
   </div>
 </div>
