@@ -29,12 +29,9 @@
       <label>Date: <input type="date" ng-model="user.date" required/></label><br/><br>
       <label>Favorite Moment: </br><input type="text" id="fav_moment" ng-model="user.moment" /></label><br/>
       <label>Something I learned: </br><input type="text" id="learned" ng-model="user.learn" /></label><br/>
-      <label>Add a photo: <input type="file" ngf-select ng-model="user.pic" name="file"
-             accept="image/*" ngf-max-size="4MB"
-             ngf-model-invalid="errorFile"> </label>
-      <i ng-show="myForm.file.$error.maxSize">File too large
-        {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+      <label>Picture: <input ng-model="photo"
+       onchange="angular.element(this).scope().file_changed(this)"
+       type="file" accept="image/*" /> </label>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
 
