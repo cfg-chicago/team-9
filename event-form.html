@@ -34,22 +34,6 @@
        type="file" accept="image/*" /> </label>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
-
-    <timeline>
-    <timeline-event ng-repeat="event in events | orderBy: 'date'" side="">
-      <timeline-badge class="{{event.badgeClass}}">
-        <i class="glyphicon {{event.badgeIconClass}}"></i>
-      </timeline-badge>
-      <timeline-panel class="{{event.badgeClass}}">
-        <timeline-heading>
-          <h4>{{event.eventname}} {{event.date | date: format: longdate}}</h4>
-        </timeline-heading>
-        <p>Event Type: {{event.eventtype}} </br></p>
-        <p>Favorite Moment: {{event.moment}} </br></p>
-        <p>Something I learned: {{event.learn}} </br></p>
-      </timeline-panel>
-    </timeline-event>
-  </timeline>
   </div>
   <td>
   <td class="blankcol">
