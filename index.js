@@ -11,7 +11,7 @@ var url = 'mongodb://34.201.37.121:27017/local';
 app.use(express.static(__dirname ));
 
 app.get("/", function(req, res, next){
-	res.sendFile(__dirname + "/student-form.html");
+	res.sendFile(__dirname + "/event-form.html");
 });
 
 app.get('/get-data', function(req,res,next) {
@@ -54,9 +54,7 @@ app.post('/newuser', function(req,res,next) {
 			console.log('item inserted');
 			db.close();
 		})
-	}, function(){
-		db.close();
-	});
+	})
 	res.redirect('/');
 
 });
@@ -78,9 +76,7 @@ app.post('/newevent', function(req,res,next) {
 			console.log('item inserted');
 			db.close();
 		})
-	}, function(){
-		db.close();
-	});
+	})
 	res.redirect('/');
 
 });
