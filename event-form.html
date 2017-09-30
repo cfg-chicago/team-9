@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
-  <link rel = "stylesheet" href="profile.css"> 
+  <link rel = "stylesheet" href="profile.css">
   <meta charset="utf-8"/>
   <title>Student Profile Creation</title>
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
   <script src="eventformcontroller.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
+  <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 </head>
 
 <body ng-app="myApp">
@@ -18,15 +21,35 @@
 </div>
   <div ng-controller="eventformcontroller">
     <form>
-      <label>Event Name: <input type="text" ng-model="user.eventname"/></label><br/>
-      <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes "></select></label><br/>
-      <label>Date (mm-dd-yyyy): <input type="date" ng-model="user.date" /></label><br/>
+      <label>Event Name: <input type="text" ng-model="user.eventname" required/></label><br/>
+      <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes " required></select></label><br/>
+      <label>Date (yyyy-mm-dd): <input type="date" ng-model="user.date" required/></label><br/>
       <label>Favorite Moment: <input type="text" id="fav_moment" ng-model="user.moment" /></label><br/>
       <label>Something I learned: <input type="text" id="learned" ng-model="user.learn" /></label><br/>
+      <input type="file" ngf-select ng-model="user.pic" name="file"
+             accept="image/*" ngf-max-size="6MB"
+             ngf-model-invalid="errorFile">
+      <i ng-show="myForm.file.$error.maxSize">File too large
+        {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
-    <pre>user = {{user | json}}</pre>
-    <pre>master = {{master | json}}</pre>
+    <pre>user = {{uploadPic}}</pre>
+    <timeline>
+    <timeline-event ng-repeat="event in events | orderBy: 'date'" side="">
+      <timeline-badge class="{{event.badgeClass}}">
+        <i class="glyphicon {{event.badgeIconClass}}"></i>
+      </timeline-badge>
+      <timeline-panel class="{{event.badgeClass}}">
+        <timeline-heading>
+          <h4>{{event.eventname}} {{event.date | date: format: longdate}}</h4>
+        </timeline-heading>
+        <p>Event Type: {{event.eventtype}} </br></p>
+        <p>Favorite Moment: {{event.moment}} </br></p>
+        <p>Something I learned: {{event.learn}} </br></p>
+      </timeline-panel>
+    </timeline-event>
+  </timeline>
   </div>
 </body>
 
