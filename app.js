@@ -1,3 +1,4 @@
 angular.module('myApp', [
-  'myApp.controllers'
+  'myApp.controllers',
+  'angular-timeline'
 ]);

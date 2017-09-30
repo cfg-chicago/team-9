@@ -7,6 +7,8 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
   <script src="eventformcontroller.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
+  <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
 </head>
 
 <body ng-app="myApp">
@@ -19,8 +21,22 @@
       <label>Something I learned: <input type="text" ng-model="user.learn" /></label><br/>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
-    <pre>user = {{user | json}}</pre>
-    <pre>master = {{master | json}}</pre>
+
+    <timeline>
+    <timeline-event ng-repeat="event in events | orderBy: 'date'" side="">
+      <timeline-badge class="{{event.badgeClass}}">
+        <i class="glyphicon {{event.badgeIconClass}}"></i>
+      </timeline-badge>
+      <timeline-panel class="{{event.badgeClass}}">
+        <timeline-heading>
+          <h4>{{event.eventname}} {{event.date | date: format: longdate}}</h4>
+        </timeline-heading>
+        <p>Event Type: {{event.eventtype}} </br></p>
+        <p>Favorite Moment: {{event.moment}} </br></p>
+        <p>Something I learned: {{event.learn}} </br></p>
+      </timeline-panel>
+    </timeline-event>
+  </timeline>
   </div>
 </body>
 
