@@ -1,18 +1,18 @@
 <<<<<<< HEAD
 .horizontal-nav {
-  background: #efefef;
+  background: #58cb89;
   border-radius: 6px;
 }
 .horizontal-nav ul {
-  background: #128F9A;
+  background: #0e9ace;
   float: left;
   text-align: center;
   border-radius: 6px;
-  border: 1px solid #0e7079;
+  border: 1px solid #0e9ace ;
 }
 .horizontal-nav ul li {
   float: left;
-  border-left: 1px solid #0e7079;
+  border-left: 1px solid #0e9ace;
 }
 .horizontal-nav ul li:first-child {
   border-left: 0 none;
