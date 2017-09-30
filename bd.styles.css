@@ -51,6 +51,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 body {
 	padding: 0; margin: 0;
+	background-color:#44B944;
 }
 .wrapper {
 	max-width: 770px;
