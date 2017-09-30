@@ -6,5 +6,7 @@ controller('studentformcontroller', function($scope) {
   $scope.master={};
   $scope.update = function(user) {
     $scope.master = angular.copy(user);
+    $scope.master.events=[];
+    $scope.master.picture=[];
   }
 });
