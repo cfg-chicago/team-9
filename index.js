@@ -48,14 +48,39 @@ app.post('/newuser', function(req,res,next) {
 		assert.equal(null,err);
 		db.collection('Users').insertOne(item, function(err, result) {
 			assert.equal(null,err);
-			console.log('item inserted');
 			db.close();
 		})
 	})
 	res.redirect('/');
 
 });
+function getUser(item, callback){
+	var t = "";
+	var k;
 
+	mongo.connect(url, function(err,db) {
+ 		assert.equal(null,err);
+
+ 		
+		db.collection('Users',function(err,collection){
+			collection.findOne({username: "1"}, function(err,thing){
+				db.close();
+				callback(thing.event,item);
+			});
+		})
+	});
+
+	
+}
+function updateUser(t,item){
+	mongo.connect(url, function(err,db) {
+		console.log("update t:" + t);
+		var x = t.concat(JSON.stringify(item))
+		db.collection('Users').update({username: "1"}, {$set: {event : x}})
+		db.close();
+	});
+
+}
 app.post('/newevent', function(req,res,next) {
 	var item = {
 		eventname: req.body.eventname,
@@ -64,19 +89,9 @@ app.post('/newevent', function(req,res,next) {
 		moment: req.body.moment,
 		learn: req.body.learn,
 	};
+	 getUser(item,updateUser);
 
- 	mongo.connect(url, function(err,db) {
- 		assert.equal(null,err);
- 		query = {username: "1"};
-		var k = db.collection('Users').find(query);
-		var t
-		k.forEach(function(doc){
-			t= doc.event;
-		});
-		t = t + JSON.stringify(item);
-
-		db.collection('Users').update(query, {$set: {event : t}})
-	});
+ 	
 });
 
 
