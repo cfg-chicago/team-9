@@ -1,5 +1,5 @@
 angular.module('myApp.controllers', []).
-controller('eventformcontroller', ['$scope','Upload','$timeout', function($scope, Upload, $timeout) {
+controller('eventformcontroller', ['$scope','Upload','$timeout','$http', function($scope, Upload, $timeout, $http) {
   //$scope.grades=[{'name':'4'},{'name':'5'},{'name':'6'},{'name':'7'},{'name':'8'}];
   $scope.eventtypes=['Field Trip','Weekly Update','End of Year Project','Family Dinner'];
 
@@ -7,6 +7,14 @@ controller('eventformcontroller', ['$scope','Upload','$timeout', function($scope
   $scope.events = [];
   $scope.update = function(user) {
     $scope.master = angular.copy(user);
+    $scope.master.id = 1;
+    $http.post('/newevent',$scope.master).then(function(response) {
+      console.log("hi");
+    },
+    function(response) {
+      console.log("no");
+    });
+    
     $scope.events.push({
       badgeClass: 'info',
       badgeIconClass: 'glyphicon-check',
@@ -16,6 +24,11 @@ controller('eventformcontroller', ['$scope','Upload','$timeout', function($scope
       moment: $scope.master.moment,
       learn: $scope.master.learn
     })
+    user.eventname="";
+    user.eventtype="";
+    user.date="";
+    user.moment="";
+    user.learn="";
   };
 
   $scope.uploadPic = function(file) {
