@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel = "stylesheet" href="profile.css"> 
   <meta charset="utf-8"/>
   <title>Student Profile Creation</title>
   <script src="bower_components/angular/angular.js"></script>
@@ -10,13 +11,18 @@
 </head>
 
 <body ng-app="myApp">
+  <div>
+    <h1>
+      Create a new Event
+  </h1>
+</div>
   <div ng-controller="eventformcontroller">
     <form>
-      <label>Event Name: <input type="text" ng-model="user.eventname" /></label><br/>
+      <label>Event Name: <input type="text" ng-model="user.eventname"/></label><br/>
       <label>Event Type: <select ng-model="user.eventtype" ng-options="event as event for event in eventtypes "></select></label><br/>
-      <label>Date (yyyy-mm-dd): <input type="date" ng-model="user.date" /></label><br/>
-      <label>Favorite Moment: <input type="text" ng-model="user.moment" /></label><br/>
-      <label>Something I learned: <input type="text" ng-model="user.learn" /></label><br/>
+      <label>Date (mm-dd-yyyy): <input type="date" ng-model="user.date" /></label><br/>
+      <label>Favorite Moment: <input type="text" id="fav_moment" ng-model="user.moment" /></label><br/>
+      <label>Something I learned: <input type="text" id="learned" ng-model="user.learn" /></label><br/>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
     <pre>user = {{user | json}}</pre>
