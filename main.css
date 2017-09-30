@@ -1,18 +1,17 @@
-<<<<<<< HEAD
 .horizontal-nav {
-  background: #efefef;
+  background: #58cb89;
   border-radius: 6px;
 }
 .horizontal-nav ul {
-  background: #128F9A;
+  background: #0e9ace;
   float: left;
   text-align: center;
   border-radius: 6px;
-  border: 1px solid #0e7079;
+  border: 1px solid #0e9ace ;
 }
 .horizontal-nav ul li {
   float: left;
-  border-left: 1px solid #0e7079;
+  border-left: 1px solid #0e9ace;
 }
 .horizontal-nav ul li:first-child {
   border-left: 0 none;
@@ -37,16 +36,4 @@
 .horizontal-nav ul li:last-child a {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-=======
-body{
-	background-color:white ;
-}
-
-#logo{
-
-}
-
-#info{
-	text-align:left;
->>>>>>> 820c2fabcec0f7e52836ad77cbff055c7583e0f7
 }
