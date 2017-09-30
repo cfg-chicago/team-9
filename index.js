@@ -11,7 +11,7 @@ var url = 'mongodb://34.201.37.121:27017/local';
 app.use(express.static(__dirname ));
 
 app.get("/", function(req, res, next){
-	res.sendFile(__dirname + "/main.html");
+	res.sendFile(__dirname + "/event-form.html");
 });
 
 app.get('/get-data', function(req,res,next) {
@@ -25,10 +25,7 @@ app.get('/get-data', function(req,res,next) {
 
 		}, function(){
 			db.close();
-//			res.render('index', {items: resultArray})
 		});
-
-
 	});
 	res.redirect('/');
 });
@@ -66,19 +63,21 @@ app.post('/newevent', function(req,res,next) {
 		date: req.body.date,
 		moment: req.body.moment,
 		learn: req.body.learn,
-		id: req.body.learn,
 	};
 
-	mongo.connect(url, function(err,db) {
-		assert.equal(null,err);
-		db.collection('Users').insertOne(item, function(err, result) {
-			assert.equal(null,err);
-			console.log('item inserted');
-			db.close();
-		})
-	})
-	res.redirect('/');
+ 	mongo.connect(url, function(err,db) {
+ 		assert.equal(null,err);
+ 		query = {username: "1"};
+		var k = db.collection('Users').find(query);
+		var t
+		k.forEach(function(doc){
+			t= doc.event;
+		});
+		t = t + JSON.stringify(item);
 
+		db.collection('Users').update(query, {$set: {event : t}})
+	});
 });
+
 
 app.listen(port,'0.0.0.0',  ()  => console.log('Server running on port '+ port))
