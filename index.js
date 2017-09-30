@@ -67,9 +67,15 @@ app.post('/newevent', function(req,res,next) {
 
  	mongo.connect(url, function(err,db) {
  		assert.equal(null,err);
- 		query = {"mentor": "Dennis"};
-		var k = db.collection('Users').find(query).toArray();
-		db.collection('Users').update(query, {$set: {event : 200}})
+ 		query = {username: "1"};
+		var k = db.collection('Users').find(query);
+		var t
+		k.forEach(function(doc){
+			t= doc.event;
+		});
+		t = t + JSON.stringify(item);
+
+		db.collection('Users').update(query, {$set: {event : t}})
 	});
 });
 
