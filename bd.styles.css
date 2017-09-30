@@ -48,7 +48,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 /*-------------------------------------------
 	@Structure
 ---------------------------------------------*/
-
+@font-face {
+  font-family: palanquin;
+  src:url(palanquin/palanquin-regular.ttf);
+}
 body {
 	padding: 0; margin: 0;
 	background-color:#44B944;
@@ -100,7 +103,7 @@ body {
 ---------------------------------------------*/
 
 body {
-	font: 14px/20px helvetica, arial, sans-serif;
+	font: 14px/20px palanquin;
 	color: #606060;
 }
 h1, h2, h3, h4, h5, h6 {}
@@ -162,10 +165,9 @@ table {
 	font-size: 13px; line-height: 18px;
 	margin: 0 0 20px 0;
 	border-left: 1px solid #e0e0e0;
+	padding
 }
-table tr {
-	
-}
+
 table tr th, table tr td {
 	padding: 10px 14px;
 	text-align: left;
