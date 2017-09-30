@@ -14,7 +14,7 @@ controller('eventformcontroller', ['$scope','Upload','$timeout','$http', functio
     function(response) {
       console.log("no");
     });
-    
+
     $scope.events.push({
       badgeClass: 'info',
       badgeIconClass: 'glyphicon-check',
