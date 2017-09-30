@@ -4,10 +4,11 @@ controller('studentformcontroller',['$scope','$timeout', '$http', function($scop
   $scope.grades=['4','5','6','7','8'];
   $scope.mentors=['Dennis','Stanley','Parker','Johnny','Justin'];
   $scope.master={};
+
   $scope.update = function(user) {
     $scope.master = angular.copy(user);
+    $scope.master.picture=$scope.result;
     $scope.master.events=[];
-    $scope.master.picture=[];
     $http.post('/newuser',$scope.master).then(function(response) {
       console.log("hi");
     },
@@ -22,6 +23,7 @@ controller('studentformcontroller',['$scope','$timeout', '$http', function($scop
         var reader = new FileReader();
         reader.onload = function(e) {
             $scope.$apply(function() {
+                $scope.result = reader.result;
                 $scope.prev_img = e.target.result;
             });
         };
