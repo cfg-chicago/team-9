@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Student Profile Creation</title>
+  <link href="student-form.css" rel = "stylesheet" type = "text/css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="studentformcontroller.js"></script>
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="studentformcontroller">
+    <form>
+      <label>Name: <input type="text" ng-model="user.name" /></label><br/>
+      <label>Mentor: <select ng-model="user.mentor" ng-options="mentor as mentor for mentor in mentors "></select></label><br/>
+      <label>Grade: <select ng-model="user.grade" ng-options="grade as grade for grade in grades"></select> </label><br/>
+      <label>Favorite Subject: <input type="text" ng-model="user.subject" /></label><br/>
+      <label>Favorite Sport: <input type="text" ng-model="user.sport" /></label><br/>
+      <label>Favorite TV Show: <input type="text" ng-model="user.tv" /></label><br/>
+      <label>Word that describes you: <input type="text" ng-model="user.word" /></label><br/>
+      <input type="submit" ng-click="update(user)" value="Submit" />
+    </form>
+    <pre>user = {{user | json}}</pre>
+    <pre>master = {{master | json}}</pre>
+  </div>
+</body>
+
+</html>
