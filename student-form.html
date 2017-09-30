@@ -23,6 +23,9 @@
       <label>Favorite Sport: <input type="text" ng-model="user.sport" /></label><br/>
       <label>Favorite TV Show: <input type="text" ng-model="user.tv" /></label><br/>
       <label>Word that describes you: <input type="text" ng-model="user.word" /></label><br/>
+      <label>Picture: <input ng-model="photo"
+       onchange="angular.element(this).scope().file_changed(this)"
+       type="file" accept="image/*" /> </label>
       <input type="submit" ng-click="update(user)" value="Submit" />
     </form>
     <pre>user = {{user | json}}</pre>
