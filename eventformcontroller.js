@@ -50,5 +50,16 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
     });
     }
 
+    $scope.file_changed = function(element) {
+
+          var photofile = element.files[0];
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              $scope.$apply(function() {
+                  $scope.prev_img = e.target.result;
+              });
+          };
+          reader.readAsDataURL(photofile);
+   };
 
 }]);
