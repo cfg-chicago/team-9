@@ -5,8 +5,10 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
 
   $scope.master={};
   $scope.events = [];
+
   $scope.update = function(user) {
     $scope.master = angular.copy(user);
+    $scope.master.picture=$scope.result;
     $scope.master.id = 1;
     $http.post('/newevent',$scope.master).then(function(response) {
       console.log("hi");
@@ -56,10 +58,12 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
           var reader = new FileReader();
           reader.onload = function(e) {
               $scope.$apply(function() {
+                 $scope.result = reader.result;
                   $scope.prev_img = e.target.result;
               });
           };
           reader.readAsDataURL(photofile);
+
    };
 
 }]);
