@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .horizontal-nav {
   background: #efefef;
   border-radius: 6px;
@@ -36,4 +37,16 @@
 .horizontal-nav ul li:last-child a {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+=======
+body{
+	background-color:white ;
+}
+
+#logo{
+
+}
+
+#info{
+	text-align:left;
+>>>>>>> 820c2fabcec0f7e52836ad77cbff055c7583e0f7
 }
