@@ -14,21 +14,6 @@ app.get("/", function(req, res, next){
 	res.sendFile(__dirname + "/event-form.html");
 });
 
-app.get('/get-data', function(req,res,next) {
-	var resultArray = [];
-	mongo.connect(url, function(err,db) {
-		assert.equal(null,err);
-		var cursor = db.collection('User').find();
-		cursor.forEach(function(doc,err){
-			assert.equal(null,err);
-			resultArray.push(doc);
-
-		}, function(){
-			db.close();
-		});
-	});
-	res.redirect('/');
-});
 
 app.post('/newuser', function(req,res,next) {
 	var item = {
@@ -82,6 +67,8 @@ function updateUser(t,item){
 	});
 
 }
+
+
 app.post('/newevent', function(req,res,next) {
 	var item = {
 		eventname: req.body.eventname,
@@ -96,5 +83,15 @@ app.post('/newevent', function(req,res,next) {
  	
 });
 
+app.get('/getevent', function(req,res,next){
+	mongo.connect(url,function(err,db){
+		assert.equal(null,err);
+		var x;
+		db.collection('Users').findOne({username: "1"}, function(err,con){
+			res.send(con.event);
+		});
+	});
+	res.redirect('/');
+});
 
 app.listen(port,'0.0.0.0',  ()  => console.log('Server running on port '+ port))
