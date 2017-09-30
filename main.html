@@ -5,8 +5,56 @@
     <script src="jquery-3.2.1.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="bd.styles.css">
+    <link rel="stylesheet" href="page1.css">
+ <style>
+        * {
+    box-sizing: border-box;
+}
+
+
     
+
+
+
+.timeline::after {
+    content: '';
+    position:fixed
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
    
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 90%;
+}
+
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative
+    border-radius: 6px;
+}
+
+ 
+  
+  .container {
+    width: 90%;
+    padding-left: 420px;   
+ </style>
     
     </head>
 <body>
@@ -22,18 +70,28 @@
     <br>
     <br>
     
-	<div id ="info">
-        <img src="photo.png" alt="Profile Picture"> 
-    </div>
-    <div>
+	<table id="table" border="3px solid black" align="left" margin-left: 1cm>
+        <tr>
+            <td>
+        <img src="photo.png" alt="Profile Picture" > 
+
+    
             <p>
             <strong>Justin Brown</strong> <br/>
 			<strong>Grade: 08  </strong> <br> 
-			<strong>Mentor(s): </strong> Brain Smith <br>
+			<strong>Mentor(s): </strong> Brian Smith <br>
             <strong>Interests: </strong> Ultimate Frisbee
-             <br/>    
-            </p>                 
-	</div>
+             <br/>
+            <strong> Favorite Color:</strong> Orange<br>
+            <br>
+            <strong> <ins>Achievements Unlocked</ins></strong> <br>
+            <img src="badge4.png" width="20cm"> 3 Personal Posts <br>
+            <img src="badge4.png" width="20cm"> Journal Post 
+                
+            </p> 
+                </td>
+            </tr>
+	</table>
           
     
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -42,6 +100,48 @@
 <!-- JavaScript -->
 <script src="bd.ui.js"></script>
 <script src="jquery.horizontalNav.js"></script>
+    <h1 align="center"> Activity Feed </h1>
+        <br>
+        <br>
+  
+<div class="timeline">
+  <div class="container">
+    <div class="content">
+      <h2>2017</h2>
+      <p>#</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h2>2016</h2>
+      <p>#</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h2>2015</h2>
+      <p>#</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h2>2012</h2>
+      <p>#</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h2>2011</h2>
+      <p>#</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h2>2007</h2>
+      <p>#</p>
+    </div>
+  </div>
+</div>
     
 </body>
 </html>
