@@ -42,6 +42,7 @@ app.post('/newuser', function(req,res,next) {
 		event: req.body.event,
 		username: req.body.username,
 		password: req.body.password,
+		picture: req.body.picture,
 	};
 
 	mongo.connect(url, function(err,db) {
@@ -88,6 +89,7 @@ app.post('/newevent', function(req,res,next) {
 		date: req.body.date,
 		moment: req.body.moment,
 		learn: req.body.learn,
+		picture: req.body.picture,
 	};
 	 getUser(item,updateUser);
 
