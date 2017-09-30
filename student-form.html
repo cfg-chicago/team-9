@@ -26,7 +26,7 @@
       <label>Picture: <input ng-model="photo"
        onchange="angular.element(this).scope().file_changed(this)"
        type="file" accept="image/*" /> </label>
-      <input type="submit" ng-click="update(user)" value="Submit" />
+      <input type="submit" ng-click="update(user)" value="Submit" onclick="location.href='main.html';" style="cursor: pointer;"/>
     </form>
 
   </div>
