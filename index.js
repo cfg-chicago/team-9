@@ -27,7 +27,7 @@ app.get('/get-data', function(req,res,next) {
 			db.close();
 //			res.render('index', {items: resultArray})
 		});
-		
+
 
 	});
 	res.redirect('/');

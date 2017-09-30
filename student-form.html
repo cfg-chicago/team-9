@@ -17,6 +17,8 @@
   <div ng-controller="studentformcontroller">
     <form>
       <label>Name: <input type="text" ng-model="user.name" /></label><br/>
+      <label>Username: <input type="text" ng-model="user.username" /></label><br/>
+      <label>Password: <input type="text" ng-model="user.password" /></label><br/>
       <label>Mentor: <select ng-model="user.mentor" ng-options="mentor as mentor for mentor in mentors "></select></label><br/>
       <label>Grade: <select ng-model="user.grade" ng-options="grade as grade for grade in grades"></select> </label><br/>
       <label>Favorite Subject: <input type="text" ng-model="user.subject" /></label><br/>
