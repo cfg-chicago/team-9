@@ -1,5 +1,5 @@
 angular.module('myApp.controllers', []).
-controller('studentformcontroller','$http', function($scope,$http) {
+controller('studentformcontroller',['$http', function($scope,$http) {
   //$scope.grades=[{'name':'4'},{'name':'5'},{'name':'6'},{'name':'7'},{'name':'8'}];
   $scope.grades=['4','5','6','7','8'];
   $scope.mentors=['Dennis','Stanley','Parker','Johnny','Justin'];
@@ -15,4 +15,4 @@ controller('studentformcontroller','$http', function($scope,$http) {
       console.log("no");
     });
   }
-});
+}]);

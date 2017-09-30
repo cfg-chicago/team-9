@@ -5,13 +5,13 @@ const mongo = require('mongodb');
 const assert = require('assert');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-var port = 5000
+var port = 3000
 var url = 'mongodb://34.201.37.121:27017/local';
 
 app.use(express.static(__dirname ));
 
 app.get("/", function(req, res, next){
-	res.sendFile(__dirname + "/event-form.html");
+	res.sendFile(__dirname + "/student-form.html");
 });
 
 app.get('/get-data', function(req,res,next) {
@@ -54,7 +54,9 @@ app.post('/newuser', function(req,res,next) {
 			console.log('item inserted');
 			db.close();
 		})
-	})
+	}, function(){
+		db.close();
+	});
 	res.redirect('/');
 
 });
@@ -76,7 +78,9 @@ app.post('/newevent', function(req,res,next) {
 			console.log('item inserted');
 			db.close();
 		})
-	})
+	}, function(){
+		db.close();
+	});
 	res.redirect('/');
 
 });

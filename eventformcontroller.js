@@ -1,5 +1,5 @@
 angular.module('myApp.controllers', []).
-controller('eventformcontroller', ['$scope','Upload','$timeout','$http', function($scope, Upload, $timeout, $http) {
+controller('eventformcontroller', ['$scope','$timeout','$http', function($scope, $timeout, $http) {
   //$scope.grades=[{'name':'4'},{'name':'5'},{'name':'6'},{'name':'7'},{'name':'8'}];
   $scope.eventtypes=['Field Trip','Weekly Update','End of Year Project','Family Dinner'];
 
