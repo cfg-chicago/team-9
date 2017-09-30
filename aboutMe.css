@@ -38,7 +38,7 @@
   border-bottom-right-radius: 6px;
 }
 
-.card {
+#card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -47,7 +47,7 @@
     border: 1px solid black;
 }
 
-.grade .mentor .interests {
+#grade #mentor #interests {
     color: grey;
     font-size: 18px;
 }
