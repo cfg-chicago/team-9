@@ -14,16 +14,6 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
     },
     function(response) {
     });
-
-    $scope.events.push({
-      badgeClass: 'info',
-      badgeIconClass: 'glyphicon-check',
-      eventname: $scope.master.eventname,
-      eventtype: $scope.master.eventtype,
-      date: $scope.master.date,
-      moment: $scope.master.moment,
-      learn: $scope.master.learn
-    })
     user.eventname="";
     user.eventtype="";
     user.date="";
