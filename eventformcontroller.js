@@ -33,7 +33,7 @@ controller('eventformcontroller', ['$scope','Upload','$timeout','$http', functio
 
   $scope.uploadPic = function(file) {
     file.upload = Upload.upload({
-      url: '/hello.png',
+      url: 'hello.png',
       data: {username: $scope.username, file: file},
     });
 

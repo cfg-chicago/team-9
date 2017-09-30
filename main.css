@@ -37,3 +37,20 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+
+/***#logos{
+  text-align: justify;
+}
+.logos{
+  width:auto;
+  height:30px;
+  display: inline-block;
+  width: 350px;
+  height: 75px;
+}
+
+#logos:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}*/
