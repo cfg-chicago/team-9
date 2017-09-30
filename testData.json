@@ -1,0 +1,3 @@
+var data = [
+    {name:"John Doe", mentor:"Mister Mentor", grade:"5", favoriteSubject:"Math", favoriteSport:"Soccer", favoriteShow:"Spongebob", word:"Funny"}
+];
