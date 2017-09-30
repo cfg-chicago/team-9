@@ -17,6 +17,8 @@ controller('studentformcontroller',['$scope','$timeout', '$http', function($scop
     });
   };
 
+  /*Submits post request w/ base64 encoding for photo*/
+
   $scope.file_changed = function(element) {
 
         var photofile = element.files[0];

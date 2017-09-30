@@ -1,3 +1,5 @@
+/*Main node.js file for handling get/post requests*/
+
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
@@ -55,6 +57,8 @@ app.post('/newuser', function(req,res,next) {
 	res.redirect('/');
 
 });
+
+
 
 app.post('/newevent', function(req,res,next) {
 	var item = {

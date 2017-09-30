@@ -11,10 +11,8 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
     $scope.master.picture=$scope.result;
     $scope.master.id = 1;
     $http.post('/newevent',$scope.master).then(function(response) {
-      console.log("hi");
     },
     function(response) {
-      console.log("no");
     });
 
     $scope.events.push({
@@ -52,6 +50,7 @@ controller('eventformcontroller', ['$scope','$timeout','$http', function($scope,
     });
     }
 
+/*Encode to base64*/
     $scope.file_changed = function(element) {
 
           var photofile = element.files[0];
