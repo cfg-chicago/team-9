@@ -1,3 +1,11 @@
+@font-face {
+  font-family: palanquin;
+  src:url(palanquin/palanquin-regular.ttf);
+}
+@font-face {
+  font-family: palanquin-bold;
+  src:url(palanquin/palanquin-bold.ttf);
+}
 body {
   margin:0px;
 }
@@ -20,10 +28,12 @@ input[type=text], select, textarea {
   text-align: center;
   font-size: 32px;
   padding-bottom: 20px;
+  font-family: palanquin-bold;
 }
 
 #form {
   text-align: center;
+  font-family: palanquin;
 }
 
 .blankcol {

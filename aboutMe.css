@@ -44,6 +44,7 @@
     margin: auto;
     text-align: center;
     background-color: white;
+    border: 1px solid black;
 }
 
 #grade #mentor #interests {
@@ -66,7 +67,6 @@ button {
 
 a {
     text-decoration: none;
-
     color: black;
 }
 
