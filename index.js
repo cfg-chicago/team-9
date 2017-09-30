@@ -25,10 +25,7 @@ app.get('/get-data', function(req,res,next) {
 
 		}, function(){
 			db.close();
-//			res.render('index', {items: resultArray})
 		});
-
-
 	});
 	res.redirect('/');
 });
@@ -66,19 +63,15 @@ app.post('/newevent', function(req,res,next) {
 		date: req.body.date,
 		moment: req.body.moment,
 		learn: req.body.learn,
-		id: req.body.learn,
 	};
 
-	mongo.connect(url, function(err,db) {
-		assert.equal(null,err);
-		db.collection('Users').insertOne(item, function(err, result) {
-			assert.equal(null,err);
-			console.log('item inserted');
-			db.close();
-		})
-	})
-	res.redirect('/');
-
+ 	mongo.connect(url, function(err,db) {
+ 		assert.equal(null,err);
+ 		query = {"mentor": "Dennis"};
+		var k = db.collection('Users').find(query).toArray();
+		db.collection('Users').update(query, {$set: {event : 200}})
+	});
 });
+
 
 app.listen(port,'0.0.0.0',  ()  => console.log('Server running on port '+ port))
